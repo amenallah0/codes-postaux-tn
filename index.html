@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Codes postaux Tunisie | الرموز البريدية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg"></div>
+  <main class="wrap">
+    <header class="hero">
+      <p class="brand" lang="ar" dir="rtl">الرموز البريدية التونسية</p>
+      <h1>Codes postaux Tunisie</h1>
+      <p class="sub">Gouvernorat · Ville · Imada — عربي / Français</p>
+    </header>
+
+    <section class="panel" aria-label="Recherche">
+      <div class="field">
+        <label for="gov">
+          <span>Gouvernorat</span>
+          <span lang="ar" dir="rtl">الولاية</span>
+        </label>
+        <select id="gov">
+          <option value="">— Choisir / اختر —</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="ville">
+          <span>Ville / Délégation</span>
+          <span lang="ar" dir="rtl">المعتمدية</span>
+        </label>
+        <select id="ville" disabled>
+          <option value="">— Choisir / اختر —</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="imada">
+          <span>Imada</span>
+          <span lang="ar" dir="rtl">العمادة</span>
+        </label>
+        <select id="imada" disabled>
+          <option value="">— Choisir / اختر —</option>
+        </select>
+      </div>
+
+      <div class="search-row">
+        <label for="q" class="sr-only">Recherche</label>
+        <input id="q" type="search" placeholder="Rechercher une imada / ابحث عن عمادة…" autocomplete="off" />
+      </div>
+    </section>
+
+    <section id="result" class="result hidden" aria-live="polite">
+      <div class="cp-block">
+        <p class="cp-label">Code postal · الرمز البريدي</p>
+        <p id="cp" class="cp"></p>
+      </div>
+      <div class="langs">
+        <article class="lang">
+          <h2>Français</h2>
+          <dl>
+            <div><dt>Gouvernorat</dt><dd id="fr-gov"></dd></div>
+            <div><dt>Ville</dt><dd id="fr-ville"></dd></div>
+            <div><dt>Imada</dt><dd id="fr-imada"></dd></div>
+          </dl>
+        </article>
+        <article class="lang ar" lang="ar" dir="rtl">
+          <h2>العربية</h2>
+          <dl>
+            <div><dt>الولاية</dt><dd id="ar-gov"></dd></div>
+            <div><dt>المعتمدية</dt><dd id="ar-ville"></dd></div>
+            <div><dt>العمادة</dt><dd id="ar-imada"></dd></div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="list-wrap">
+      <div class="list-head">
+        <h2>Liste</h2>
+        <p id="count" class="count"></p>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Gouvernorat<br /><span lang="ar" dir="rtl">الولاية</span></th>
+              <th>Ville<br /><span lang="ar" dir="rtl">المعتمدية</span></th>
+              <th>Imada<br /><span lang="ar" dir="rtl">العمادة</span></th>
+              <th>CP<br /><span lang="ar" dir="rtl">الرمز</span></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
